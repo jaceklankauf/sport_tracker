@@ -1,34 +1,34 @@
 import 'package:flutter/material.dart';
+import './widgets/stopwatchPage.dart';
 
-class MyApp extends StatelessWidget {
+class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'stop watch',
       home: Scaffold(
-          body: Container(
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                begin: Alignment.topRight,
-                end: Alignment.bottomLeft,
-                stops: [0.15, 0.9],
-                colors: [
-                  Colors.white,
-                  Colors.grey[700],
-                ], // whitish to gray
-                tileMode:
-                    TileMode.repeated, // repeats the gradient over the canvas
-              ),
+        body: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topRight,
+              end: Alignment.bottomLeft,
+              stops: [0.15, 0.9],
+              colors: [
+                Colors.white,
+                Colors.grey[700],
+              ],
+              tileMode: TileMode.repeated,
             ),
-            
           ),
-          appBar: AppBar(
-            backgroundColor: Colors.grey[800],
-            title: Text('fabulous stopwatch'),
+          child: Center(
+            child: StopwatchPage(),
           ),
-          // title: Text('fabulous stopwatch'),
-          // backgroundColor: Colors.amber,
-          ),
+        ),
+        appBar: AppBar(
+          backgroundColor: Colors.grey[800],
+          title: Text('fabulous stopwatch'),
+        ),
+      ),
     );
   }
 }
